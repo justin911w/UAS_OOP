@@ -22,7 +22,32 @@ class User extends Person {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
-    public function update($id, $data) { /* Untuk nanti */ }
+    public function update($id, $data) {
+        // Cek apakah user mengirimkan password baru atau tidak
+        if (!empty($data['password'])) {
+            // Update beserta password baru (di-hash)
+            $query = "UPDATE users SET nama = :nama, email = :email, no_hp = :nohp, password = :password WHERE id = :id";
+            $stmt = $this->db->prepare($query);
+            return $stmt->execute([
+                'nama' => $data['nama'],
+                'email' => $data['email'],
+                'nohp' => $data['nohp'],
+                'password' => password_hash($data['password'], PASSWORD_DEFAULT),
+                'id' => $id
+            ]);
+        } else {
+            // Update tanpa mengubah password yang sudah ada
+            $query = "UPDATE users SET nama = :nama, email = :email, no_hp = :nohp WHERE id = :id";
+            $stmt = $this->db->prepare($query);
+            return $stmt->execute([
+                'nama' => $data['nama'],
+                'email' => $data['email'],
+                'nohp' => $data['nohp'],
+                'id' => $id
+            ]);
+        }
+    }
+    
     public function delete($id) { /* Untuk nanti */ }
 
     // Fungsi khusus untuk verifikasi Login

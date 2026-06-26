@@ -1,0 +1,541 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Bagian Navigasi (Atas) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #689F38; /* Warna hijau khas tulisan logo Anda */
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+/* CSS BARU UNTUK GAMBAR LOGO */
+.logo-img {
+    height: 45px; /* Anda bisa mengubah ukuran ini sesuai selera */
+    margin-right: 15px; /* Jarak antara gambar logo dan teks */
+    object-fit: contain;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Gaya Tombol (Bentuk Kapsul) */
+.btn {
+    padding: 10px 30px;
+    border-radius: 50px; 
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-register {
+    background-color: #E0E0E0;
+    color: #333;
+
+    display: inline-flex;     /* Mengubah display menjadi flexbox khusus elemen inline */
+    align-items: center;      /* Menengahkan teks secara vertikal (atas-bawah) */
+    justify-content: center;   /* Menengahkan teks secara horizontal (kiri-kanan) */
+    text-align: center;       /* Memastikan teks rata tengah */
+    vertical-align: middle;
+}
+
+.btn-login {
+    background-color: #E0E0E0;
+    color: #333;
+
+    display: inline-flex;     /* Mengubah display menjadi flexbox khusus elemen inline */
+    align-items: center;      /* Menengahkan teks secara vertikal (atas-bawah) */
+    justify-content: center;   /* Menengahkan teks secara horizontal (kiri-kanan) */
+    text-align: center;       /* Memastikan teks rata tengah */
+    vertical-align: middle;
+}
+
+/* Bagian Gambar Utama (Hero) */
+.hero-image {
+    width: 100%;
+    height: 450px; 
+    object-fit: cover; 
+    display: block;
+}
+
+/* Bagian Footer Alamat */
+.footer-address {
+    padding: 30px 50px;
+    text-align: right;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.footer-address hr {
+    border: 0;
+    border-top: 2px solid #888; 
+    margin-bottom: 5px;
+}
+
+/* ========================================= */
+/* HALAMAN REGISTRASI & LOGIN    */
+/* ========================================= */
+
+.auth-container {
+    min-height: 100vh; /* Memastikan background memenuhi tinggi layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: linear-gradient(to bottom, #ffffff 40px, #b5ffbb 100%); 
+}
+
+.auth-card {
+    background-color: #b0b0b0; /* Warna latar abu-abu sesuai desain */
+    padding: 40px 50px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+.auth-title {
+    font-size: 1.8rem;
+    color: #000;
+    margin-bottom: 30px;
+    font-weight: 800;
+}
+
+/* Wadah Input & Ikon */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group svg {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    fill: #999;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px 20px 16px 60px; /* Padding kiri dikosongkan untuk ikon */
+    border-radius: 50px;
+    border: none;
+    background-color: #dbdbdb;
+    font-size: 1.05rem;
+    color: #333;
+    font-weight: bold;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15); /* Bayangan tegas di bawah input */
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: #a3a3a3;
+}
+
+.input-group input:focus {
+    background-color: #ffffff;
+    box-shadow: 0 6px 15px rgba(104, 159, 56, 0.4); /* Efek glow hijau logo saat diklik */
+}
+
+/* Tombol Submit Full Width */
+.btn-submit {
+    width: 100%;
+    background-color: #00c932; /* Warna hijau khas logo Anda */
+    color: #ffffff;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+.btn-submit:hover {
+    background-color: #79ff84;
+}
+
+/* Responsif untuk layar HP */
+@media (max-width: 768px) {
+    .auth-card {
+        padding: 30px 20px;
+    }
+}
+
+.btn-home {
+    background-color: #60ff87;
+    color: #333;
+}
+
+.btn-home:hover {
+    background-color: #79ff84;
+}
+
+/* ========================================= */
+/* HALAMAN PROFIL PASIEN         */
+/* ========================================= */
+
+.profile-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.profile-card {
+    background-color: #ffffff; /* Latar belakang putih bersih */
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 40px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Membuat gambar jadi bulat */
+    object-fit: cover;
+    border: 3px solid #689F38; /* Lingkaran hijau di luar foto */
+}
+
+.profile-title h2 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-size: 1.8rem;
+}
+
+.profile-title p {
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Tombol Logout */
+.btn-logout {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+.btn-logout:hover {
+    background-color: #c0392b;
+}
+
+/* ========================================= */
+/* HALAMAN PROFIL DOKTER              */
+/* ========================================= */
+
+.doctor-badge {
+    background-color: #689F38;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.schedule-section {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.schedule-section h4 {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.schedule-list {
+    list-style: none;
+}
+
+.schedule-item {
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ========================================= */
+/* HALAMAN DASHBOARD ADMIN                */
+/* ========================================= */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50; /* Biru gelap profesional */
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: #bdc3c7;
+    text-decoration: none;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background-color: #34495e;
+    color: #fff;
+}
+
+/* Main Content Area */
+.admin-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #f4f7f6;
+}
+
+/* Kotak Statistik (Grid) */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-left: 5px solid #689F38; /* Warna hijau identitas klinik */
+}
+
+.stat-card h3 { font-size: 0.9rem; color: #7f8c8d; }
+.stat-card p { font-size: 1.8rem; font-weight: bold; color: #333; margin-top: 10px; }
+
+/* ========================================= */
+/* HALAMAN KELOLA POLI         */
+/* ========================================= */
+.table-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+}
+
+.btn-action {
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-right: 5px;
+    display: inline-block; 
+    margin-bottom: 5px; 
+}
+
+.btn-edit { background-color: #f1c40f; color: #000; }
+.btn-delete { background-color: #e74c3c; color: #fff; margin-top: 5px;}
+.btn-add { background-color: #689F38; color: #fff; padding: 10px 20px; display: inline-block; margin-bottom: 15px; border-radius: 5px; text-decoration: none;}
+
+/* Menyamakan konsep total dengan login/regis, hanya membedakan ukuran */
+.nav-buttons .btn-jadwal {
+    /* Mengikuti warna dasar/gaya tombol register atau login kalian */
+    background-color: #48cc69; /* Sesuaikan dengan warna utama tombol kalian jika berbeda */
+    color: #333;
+    margin-right: 12px;
+    display: inline-block;
+    text-decoration: none;
+    
+    /* Pembeda Ukuran (Lebih Kecil) */
+    font-size: 0.85rem;       /* Ukuran teks sedikit lebih kecil */
+    padding: 6px 15px;        /* Lebih ramping ke atas dan bawah */
+
+    display: inline-flex;     /* Mengubah display menjadi flexbox khusus elemen inline */
+    align-items: center;      /* Menengahkan teks secara vertikal (atas-bawah) */
+    justify-content: center;   /* Menengahkan teks secara horizontal (kiri-kanan) */
+    text-align: center;       /* Memastikan teks rata tengah */
+    vertical-align: middle;
+}
+
+.nav-buttons .nav-divider {
+    width: 3px;               /* Ketebalan garis */
+    height: 50px;             /* Tinggi garis, sesuaikan dengan tinggi tombol */
+    background-color: #000000;   /* Warna garis abu-abu halus (bisa diganti sesuai tema) */
+    margin-left: 5px;        /* Jarak garis ke tombol Jadwal Poli */
+    margin-right: 15px;       /* Jarak garis ke tombol Login */
+    display: inline-block;
+}
+
+/* ==================== 3-CARD CAROUSEL FASILITAS ==================== */
+.facilities-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.facilities-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1a3a5f;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+/* Wrapper Utama Slider */
+.carousel-viewport {
+    position: relative;
+    max-width: 1200px; /* Diperlebar agar muat 3 gambar menyamping */
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+/* Kontainer track untuk menampung semua slide */
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+}
+
+/* Set tiap item mengambil 1/3 bagian dari container (untuk layar desktop) */
+.carousel-item {
+    flex: 0 0 33.333%; 
+    padding: 0 15px;
+    box-sizing: border-box;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0.5; /* Gambar di samping agak redup */
+    transform: scale(0.9); /* Gambar di samping agak mengecil */
+}
+
+/* Efek Card yang sedang aktif di tengah */
+.carousel-item.active-center {
+    opacity: 1;
+    transform: scale(1.03); /* Card tengah dibuat menonjol */
+}
+
+.card-box {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    background: #fff;
+}
+
+.card-box img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+    color: #ffffff;
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+}
+
+.card-text h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/* Tombol Navigasi */
+.carousel-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+    font-weight: bold;
+    font-size: 22px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev-btn { left: 20px; }
+.carousel-btn.next-btn { right: 20px; }

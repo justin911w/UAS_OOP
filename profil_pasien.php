@@ -60,7 +60,8 @@ require_once 'views/layouts/header.php';
 
             <div style="display: flex; gap: 15px; margin-top: 30px;">
                 <button type="button" class="btn btn-register" style="flex: 1;">Edit Profil</button>
-                <a href="form_reservasi.php" class="btn btn-home" style="flex: 1; text-align: center; text-decoration: none;">Buat Reservasi Baru</a>
+                <a href="riwayat_pasien.php" class="btn btn-riwayat" style="flex: 1; text-align: center; text-decoration: none;">Riwayat</a>
+                <a href="form_reservasi.php" class="btn btn-home" style="flex: 1; text-align: center; text-decoration: none;">Buat Reservasi</a>
             </div>
 
         </form>

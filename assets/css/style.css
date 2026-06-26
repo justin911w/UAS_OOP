@@ -53,6 +53,17 @@ body {
     cursor: pointer;
 }
 
+.btn-riwayat {
+    background-color: black;
+    color: white;
+
+    display: inline-flex;     /* Mengubah display menjadi flexbox khusus elemen inline */
+    align-items: center;      /* Menengahkan teks secara vertikal (atas-bawah) */
+    justify-content: center;   /* Menengahkan teks secara horizontal (kiri-kanan) */
+    text-align: center;       /* Memastikan teks rata tengah */
+    vertical-align: middle;
+}
+
 .btn-register {
     background-color: #E0E0E0;
     color: #333;
